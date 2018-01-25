@@ -17,6 +17,11 @@ public class Line {
         this.second = second;
     }
 
+
+    public void claim(Player owner){
+        this.owner = owner;
+    }
+
     public Dot getFirst() {
         return first;
     }

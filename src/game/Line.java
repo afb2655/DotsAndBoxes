@@ -3,48 +3,33 @@ package game;
 public class Line {
 
 
-
-    private Dot First;
-    private Dot Second;
-    private Player claim;
-
-
-    public void setClaim(Player claim) {
-        this.claim = claim;
-    }
+    private java.util.ArrayList<Box> boxes;
+    static String EMPTY;
+    private Dot first;
+    static String HORI_LINE;
+    private Player owner;
+    private Dot second;
+    static String VERT_LINE;
 
 
-    public Player getClaim() {
-        return this.claim;
-    }
-
-    public String hasOwner() {
-        return (this.claim.getLabel());
-    }
-
-    public Player getOwner() {
-        return (this.claim);
-    }
-
-
-    public Line(Dot dot, Dot dot1) {
-        First = dot;
-        Second = dot1;
+    public Line(Dot first, Dot second) {
+        this.first = first;
+        this.second = second;
     }
 
     public Dot getFirst() {
-        return First;
+        return first;
     }
 
-    public void setFirst(Dot first) {
-        First = first;
+    public void setFirst(Dot First) {
+        first = First;
     }
 
     public Dot getSecond() {
-        return Second;
+        return second;
     }
 
-    public void setSecond(Dot second) {
-        Second = second;
+    public void setSecond(Dot Second) {
+        second = Second;
     }
 }

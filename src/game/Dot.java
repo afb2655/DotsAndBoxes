@@ -17,7 +17,7 @@ public class Dot {
 
     private int row;
     private int column;
-
+    static String DOT;
 
     public Dot(int row, int column) {
 

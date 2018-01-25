@@ -1,7 +1,7 @@
 package game;
 
-public class Lines {
+public class  Lines {
     private int ROWS;
     private int COLUMNS;
-    //private testme testteste
+    //private testme testteste testststs
  }

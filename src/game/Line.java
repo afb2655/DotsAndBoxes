@@ -17,6 +17,19 @@ public class Line {
         this.second = second;
     }
 
+    public boolean equals(Object other){
+        if (other instanceof Line){
+            if (this.owner.equals(((Line) other).owner)) {
+                if (this.first.equals(((Line) other).first) && this.second.equals(((Line) other).second)) {
+
+                }
+
+            }
+        }
+        else {
+            return false;
+        }
+    }
 
     public void claim(Player owner){
         this.owner = owner;

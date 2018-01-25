@@ -20,7 +20,8 @@ public class Dot {
     static String DOT;
 
     public Dot(int row, int column) {
-
+    this.row = row;
+    this.column = column;
     }
 
     /**

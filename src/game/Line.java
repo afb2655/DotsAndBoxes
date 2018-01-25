@@ -20,10 +20,15 @@ public class Line {
     public boolean equals(Object other){
         if (other instanceof Line){
             if (this.owner.equals(((Line) other).owner)) {
-                if (this.first.equals(((Line) other).first) && this.second.equals(((Line) other).second)) {
-
+                if ((this.first.equals(((Line) other).first) && this.second.equals(((Line) other).second)) || this.first.equals(((Line) other).second) && this.second.equals(((Line) other).first)) {
+                    return true;
                 }
-
+                else {
+                    return false;
+                }
+            }
+            else{
+                return false;
             }
         }
         else {

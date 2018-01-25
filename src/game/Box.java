@@ -18,12 +18,13 @@ public class Box {
 
     public Player getOwner() {
 
-        return Owner;
+        return owner;
     }
 
-    public void setOwner(Player owner) {
-        Owner = owner;
+    public void claim(Player owner){
+        this.owner = owner;
     }
+
 
 
 }

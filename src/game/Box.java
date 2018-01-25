@@ -5,6 +5,8 @@ public class Box {
     private Line TopLine;
     private Line BottomLine;
     private Line RightLine;
+    private Line LeftLine;
+
 
     public Player getOwner() {
         return Owner;
@@ -48,6 +50,5 @@ public class Box {
         LeftLine = leftLine;
     }
 
-    private Line LeftLine;
 
 }

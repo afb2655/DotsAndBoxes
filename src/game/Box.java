@@ -11,7 +11,7 @@ public class Box {
     private Line top;
 
 
-    public Box(int column, int row, Line Lines;) {
+    public Box(int column, int row, Line Lines) {
         this.column = column;
         this.row = row;
     }

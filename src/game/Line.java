@@ -40,19 +40,32 @@ public class Line {
         this.owner = owner;
     }
 
-    public Dot getFirst() {
-        return first;
+    public java.util.ArrayList<Box> getboxes(){
+        return(boxes);
     }
 
-    public void setFirst(Dot First) {
-        first = First;
+    public Player getOwner(){
+        return (this.owner);
+    }
+
+    public Dot getFirst() {
+        return first;
     }
 
     public Dot getSecond() {
         return second;
     }
 
-    public void setSecond(Dot Second) {
-        second = Second;
+    public  boolean hasOwner(){
+
     }
+
+    public void setBox(Box box){
+
+    }
+
+    public String toString(){
+
+    }
+
 }

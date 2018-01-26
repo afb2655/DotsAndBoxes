@@ -16,6 +16,7 @@ public class Box {
         this.row = row;
     }
 
+
     public Player getOwner() {
 
         return owner;
@@ -25,6 +26,21 @@ public class Box {
         this.owner = owner;
     }
 
+    public boolean equals(Object other){
+        if (other instanceof Box){
+            if (this.row == ((Box)other).row){
+                if (this.owner.equals(((Box) other).owner)){
+                    if (this.left.equals(((Box) other).left) && (this.right.equals(((Box) other).right)) && this.bottom.equals(((Box) other).bottom) && this.top.equals(((Box) other).top)){
+                        if (this.column == ((Box)other).column)
+                        {
+                            return true;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
 
 
 }

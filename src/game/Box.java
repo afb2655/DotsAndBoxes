@@ -17,11 +17,6 @@ public class Box {
     }
 
 
-    public Player getOwner() {
-
-        return owner;
-    }
-
     public void claim(Player owner){
         this.owner = owner;
     }
@@ -39,8 +34,46 @@ public class Box {
                 }
 
             }
+
+        }
+        else {
+            return false;
         }
     }
+
+    public Line getBottomLine() {
+        return this.bottom;
+    }
+
+    public int getColumn(){
+        return this.column;
+    }
+
+    public Line getLeftLine(){
+        return this.left;
+    }
+
+    public Player getOwner(){
+        return this.owner;
+    }
+
+    public Line getRightLine(){
+        return this.right;
+    }
+
+    public int getRow(){
+        return this.row;
+    }
+
+    public Line getTopLine(){
+        return this.top;
+    }
+
+    public String toString(){
+        return (this.owner.getLabel());
+    }
+
+
 
 
 }

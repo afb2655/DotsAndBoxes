@@ -20,6 +20,9 @@ public class Dot {
     static String DOT;
 
     public Dot(int row, int column) {
+        if (row<0 || column<0) {
+            throw new AssertionError("Dot cannot have negative coordinates");
+        }
     this.row = row;
     this.column = column;
     }
@@ -48,7 +51,7 @@ public class Dot {
      */
     @Override
     public String toString() {
-        return("("+this.row+","+" "+this.column+")"); }
+        return("."); }
 
     /**
      * Two dots are equal if they have the same row and column.

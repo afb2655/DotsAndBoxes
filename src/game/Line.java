@@ -49,11 +49,11 @@ public class Line {
     }
 
     public Dot getFirst() {
-        return first;
+        return this.first;
     }
 
     public Dot getSecond() {
-        return second;
+        return this.second;
     }
 
     public  boolean hasOwner(){

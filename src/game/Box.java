@@ -11,7 +11,7 @@ public class Box {
     private Line top;
 
 
-    public Box(int column, int row, Line Lines) {
+    public Box(int column, int row, Lines lines) {
         this.column = column;
         this.row = row;
     }
@@ -80,8 +80,6 @@ public class Box {
     public String toString(){
         return (this.owner.getLabel());
     }
-
-
 
 
 }

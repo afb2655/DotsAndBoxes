@@ -13,6 +13,9 @@ public class Line {
 
 
     public Line(Dot first, Dot second) {
+        if (((second.getRow() - first.getRow()) > 1) || (second.getColumn() - first.getColumn()) > 1){
+            throw new AssertionError("Nephew, those coordinates are whack, delet this right now");
+        }
         this.first = first;
         this.second = second;
     }
@@ -20,7 +23,7 @@ public class Line {
     public boolean equals(Object other){
         if (other instanceof Line){
             if (this.owner.equals(((Line) other).owner)) {
-                if ((this.first.equals(((Line) other).first) && this.second.equals(((Line) other).second)) || this.first.equals(((Line) other).second) && this.second.equals(((Line) other).first)) {
+                if ((this.first.equals(((Line) other).first) && this.second.equals(((Line) other).second)) || (this.first.equals(((Line) other).second) && this.second.equals(((Line) other).first))) {
                     return true;
                 }
                 else {

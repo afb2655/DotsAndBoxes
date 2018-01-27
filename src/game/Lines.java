@@ -9,7 +9,7 @@ public class  Lines {
     }
 
     public Line getLine(int row1, int column1, int row2, int column2) {
-
+        return this.lines.get(row1);
     }
 
     public int size(){

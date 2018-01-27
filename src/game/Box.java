@@ -31,14 +31,22 @@ public class Box {
                             return true;
                         }
                     }
+                    else{
+                        return false;
+                    }
                 }
-
+                else{
+                    return false;
+                }
             }
-
+            else{
+                return false;
+            }
         }
         else {
             return false;
         }
+        return false;
     }
 
     public Line getBottomLine() {

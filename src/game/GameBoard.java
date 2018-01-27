@@ -17,11 +17,11 @@ public class GameBoard {
     }
 
     public boolean gameOver(){
-
+    return false;
     }
 
     public boolean isLineValid(int row1, int column1, int row2, int column2){
-
+    return true;
     }
 
     public void makeMove(int row1, int column1, int row2, int column2){
@@ -29,11 +29,11 @@ public class GameBoard {
     }
 
     public String toString() {
-
+    return "ayylmao";
     }
 
     public Player whoseTurn() {
-
+    return this.player;
     }
 
 }

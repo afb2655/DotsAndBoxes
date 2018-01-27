@@ -4,12 +4,12 @@ public class Line {
 
 
     private java.util.ArrayList<Box> boxes;
-    static String EMPTY;
+    public static String EMPTY;
     private Dot first;
-    static String HORI_LINE;
+    public static String HORI_LINE;
     private Player owner;
     private Dot second;
-    static String VERT_LINE;
+    public static String VERT_LINE;
 
 
     public Line(Dot first, Dot second) {
@@ -57,14 +57,20 @@ public class Line {
     }
 
     public  boolean hasOwner(){
+        if (this.owner.getLabel() == " ") {
+            return false;
+        } else{
+            return true;
+        }
+        }
+//        for( int i=0; i<this.boxes.size();i++){
+//            if this.boxes(i) ==
+//        }
 
-    }
 
-    public void setBox(Box box){
-
-    }
 
     public String toString(){
+        return "changeme";
 
     }
 

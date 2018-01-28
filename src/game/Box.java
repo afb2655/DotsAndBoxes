@@ -11,19 +11,21 @@ public class Box {
     private Line top;
 
 
-    public Box(int column, int row, Lines lines) {
+    public Box(int row, int column, Lines lines) {
         this.column = column;
         this.row = row;
         this.owner = Player.NONE;
         this.bottom = lines.getLine(row+1,column,row+1,column+1);
-        this.left = lines.getLine(row,column,row+1,column+1);
+        this.left = lines.getLine(row,column,row+1,column);
         this.right = lines.getLine(row,column+1,row+1,column+1);
         this.top = lines.getLine(row,column,row,column+1);
     }
 
 
     public void claim(Player owner){
-        this.owner = owner;
+        if(this.top.hasOwner() && this.bottom.hasOwner() && this.left.hasOwner() && this.right.hasOwner()) {
+            this.owner = owner;
+        }
     }
 
     public boolean equals(Object other){

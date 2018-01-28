@@ -13,7 +13,9 @@ public class Line {
 
 
     public Line(Dot first, Dot second) {
-
+        if ((second.getRow() - first.getRow() > 1 || (second.getColumn() - first.getColumn() > 1))){
+            throw new AssertionError("Blyat those are wrong coordinates cyka");
+        }
         assert first.getRow() <= second.getRow();
         assert first.getColumn() <= second.getColumn();
         this.first = first;
@@ -24,7 +26,6 @@ public class Line {
 
     public boolean equals(Object other){
         if (other instanceof Line){
-            //if (this.owner.equals(((Line) other).owner)) {
                 if ((this.first.equals(((Line) other).first) && this.second.equals(((Line) other).second)) || (this.first.equals(((Line) other).second) && this.second.equals(((Line) other).first))) {
                     return true;
                 }
@@ -36,16 +37,14 @@ public class Line {
                 return false;
             }
         }
-//        else {
-//            return false;
-//        }
-//    }
+
 
     public void claim(Player owner){
         this.owner = owner;
     }
 
     public java.util.ArrayList<Box> getboxes(){
+
         return(boxes);
     }
 

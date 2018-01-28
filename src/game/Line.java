@@ -4,25 +4,27 @@ public class Line {
 
 
     private java.util.ArrayList<Box> boxes;
-    public static String EMPTY;
+    public static final String EMPTY =" ";
     private Dot first;
-    public static String HORI_LINE;
+    public static final String HORI_LINE = "-";
     private Player owner;
     private Dot second;
-    public static String VERT_LINE;
+    public static String VERT_LINE = "|";
 
 
     public Line(Dot first, Dot second) {
-        if (((second.getRow() - first.getRow()) > 1) || (second.getColumn() - first.getColumn()) > 1){
-            throw new AssertionError("Nephew, those coordinates are whack, delet this right now");
-        }
+
+        assert first.getRow() <= second.getRow();
+        assert first.getColumn() <= second.getColumn();
         this.first = first;
         this.second = second;
+        this.owner = Player.NONE;
+
     }
 
     public boolean equals(Object other){
         if (other instanceof Line){
-            if (this.owner.equals(((Line) other).owner)) {
+            //if (this.owner.equals(((Line) other).owner)) {
                 if ((this.first.equals(((Line) other).first) && this.second.equals(((Line) other).second)) || (this.first.equals(((Line) other).second) && this.second.equals(((Line) other).first))) {
                     return true;
                 }
@@ -34,10 +36,10 @@ public class Line {
                 return false;
             }
         }
-        else {
-            return false;
-        }
-    }
+//        else {
+//            return false;
+//        }
+//    }
 
     public void claim(Player owner){
         this.owner = owner;
@@ -73,8 +75,16 @@ public class Line {
 
 
     public String toString(){
-        return "changeme";
-
+        if (this.owner == Player.NONE){
+            return EMPTY;
+        }
+        if (this.first.getRow() == this.second.getRow()){
+            return HORI_LINE;
+        }
+        if (this.first.getColumn() == this.second.getColumn()){
+            return VERT_LINE;
+        }
+        return EMPTY;
     }
 
 }

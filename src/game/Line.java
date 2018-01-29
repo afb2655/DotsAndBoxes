@@ -1,6 +1,10 @@
 package game;
 
+import java.util.ArrayList;
+
 public class Line {
+
+
 
 
     private java.util.ArrayList<Box> boxes;
@@ -21,6 +25,7 @@ public class Line {
         this.first = first;
         this.second = second;
         this.owner = Player.NONE;
+        this.boxes = new ArrayList();
 
     }
 
@@ -41,7 +46,16 @@ public class Line {
 
     public void claim(Player owner){
         this.owner = owner;
+        for(int i =0; i<boxes.size(); i++){
+            boxes.get(i).claim(owner);
+        }
     }
+
+
+    public void setBox(Box box){
+        this.boxes.add(box);
+    }
+
 
     public java.util.ArrayList<Box> getboxes(){
 

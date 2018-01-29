@@ -16,9 +16,13 @@ public class Box {
         this.row = row;
         this.owner = Player.NONE;
         this.bottom = lines.getLine(row+1,column,row+1,column+1);
+        this.bottom.setBox(this);
         this.left = lines.getLine(row,column,row+1,column);
+        this.left.setBox(this);
         this.right = lines.getLine(row,column+1,row+1,column+1);
+        this.right.setBox(this);
         this.top = lines.getLine(row,column,row,column+1);
+        this.top.setBox(this);
     }
 
 

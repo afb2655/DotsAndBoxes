@@ -1,3 +1,6 @@
+/**
+ * this is way too hard I couldn't even finish this.
+ */
 package game;
 
 public class GameBoard {
@@ -20,8 +23,13 @@ public class GameBoard {
     return false;
     }
 
-    public boolean isLineValid(int row1, int column1, int row2, int column2){
-    return true;
+    public boolean isLineValid(int row1, int column1, int row2, int column2) {
+        if (lines.getLine(row1, column1, row2, column2) != null) {
+            if (lines.getLine(row1, column1, row2, column2).hasOwner() == true){
+                return true;
+            }
+        }
+        return false;
     }
 
     public void makeMove(int row1, int column1, int row2, int column2){
@@ -29,7 +37,7 @@ public class GameBoard {
     }
 
     public String toString() {
-    return "ayylmao";
+    return "this lab is too hard";
     }
 
     public Player whoseTurn() {

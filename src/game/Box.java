@@ -5,7 +5,9 @@
 package game;
 
 public class Box {
-
+    /**
+     * bottom column left owner right row and top, its a box!
+     */
     private Line bottom;
     private int column;
     private Line left;

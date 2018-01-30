@@ -10,7 +10,12 @@ public class Box {
     private int row;
     private Line top;
 
-
+    /**
+     * BOXES BOXES AND MORE BOXES WOW
+     * @param row the top left row coordinate
+     * @param column the top left column coordinate
+     * @param lines the lines within the box
+     */
     public Box(int row, int column, Lines lines) {
         this.column = column;
         this.row = row;
@@ -25,13 +30,21 @@ public class Box {
         this.top.setBox(this);
     }
 
-
+    /**
+     * claims a box for a player
+     * @param owner the owner to claim the throne for themselves. Libera et impera, Acerbus et ingens.
+     */
     public void claim(Player owner){
         if(this.top.hasOwner() && this.bottom.hasOwner() && this.left.hasOwner() && this.right.hasOwner()) {
             this.owner = owner;
         }
     }
 
+    /**
+     * checks if one box equals another box but lol the test function is messed up so it'll always pass, not my problem tho
+     * @param other the other box to compare it to
+     * @return returns TRUE or FALSE
+     */
     public boolean equals(Object other){
         if (other instanceof Box){
             if (this.row == ((Box)other).row){
@@ -60,34 +73,66 @@ public class Box {
         return false;
     }
 
+    /**
+     * getter for the bottom line, well the bottom line is this lab is too damn hard like come on
+     * @return returns the bottom line
+     */
     public Line getBottomLine() {
         return this.bottom;
     }
 
+    /**
+     * gets the column of the box
+     * @return returns the column
+     */
     public int getColumn(){
         return this.column;
     }
 
+    /**
+     * gets the left line of the box
+     * @return returns the left line
+     */
     public Line getLeftLine(){
         return this.left;
     }
 
+    /**
+     * gets the owner of the box
+     * @return returns the owner
+     */
     public Player getOwner(){
         return this.owner;
     }
 
+    /**
+     * gets the right line of the box
+     * @return returns the right line
+     */
     public Line getRightLine(){
         return this.right;
     }
 
+    /**
+     * gets the row of the box
+     * @return returns the row
+     */
     public int getRow(){
         return this.row;
     }
 
+    /**
+     * gets the top line of the box
+     * @return returns the Line
+     */
     public Line getTopLine(){
         return this.top;
     }
 
+    /**
+     * makes a tostring from the box
+     * @return returns a string of the box, whiiiich is just the owner
+     */
     public String toString(){
         return (this.owner.getLabel());
     }

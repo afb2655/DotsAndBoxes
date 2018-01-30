@@ -20,12 +20,15 @@ public class GameBoard {
     }
 
     public boolean gameOver(){
-    return false;
+        if (this.moves == this.lines.size()){
+            return true;
+        }
+        return false;
     }
 
     public boolean isLineValid(int row1, int column1, int row2, int column2) {
         if (lines.getLine(row1, column1, row2, column2) != null) {
-            if (lines.getLine(row1, column1, row2, column2).hasOwner() == true){
+            if (lines.getLine(row1, column1, row2, column2).hasOwner() == false){
                 return true;
             }
         }
@@ -34,6 +37,10 @@ public class GameBoard {
 
     public void makeMove(int row1, int column1, int row2, int column2){
 
+        if (isLineValid(row1,column1,row2,column2)){
+            lines.getLine(row1,column1,row2,column2).claim(this.player);
+        }
+        this.moves ++;
     }
 
     public String toString() {
@@ -41,7 +48,14 @@ public class GameBoard {
     }
 
     public Player whoseTurn() {
-    return this.player;
-    }
+        if (moves%2 == 0) {
+            return Player.RED;
+        }
+        if (moves%2 == 1){
+        return Player.BLUE;
+        }
+            return this.player;
+        }
 
-}
+    }
+    

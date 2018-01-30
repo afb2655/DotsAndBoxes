@@ -1,3 +1,7 @@
+/**
+ * Author: Aiden Buchheister
+ */
+
 package game;
 
 public class Box {

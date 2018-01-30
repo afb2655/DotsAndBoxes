@@ -1,10 +1,13 @@
+
+/**
+ * Author: Aiden Buchheister and sean strout somewhat
+ */
 package game;
 
 /**
  * Represents a single dot in the game of Dots and Boxes.  A dot is uniquely
  * defined by a row and column coordinate.
  * asdasd
- * @author YOUR NAME HERE
  */
 public class Dot {
     /**
